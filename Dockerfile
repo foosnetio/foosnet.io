@@ -2,9 +2,7 @@ FROM node:0.12.5
 
 # Add source
 ADD gulpfile.coffee package.json /src/
-COPY blog/ /src/blog
 COPY client/partials /src/client/partials
-COPY client/resources /src/client/resources
 COPY client/src /src/client/src
 COPY client/styles /src/client/styles
 COPY client/vendor /src/client/vendor

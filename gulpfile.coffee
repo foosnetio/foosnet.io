@@ -57,7 +57,7 @@ gulp.task 'start', ->
   require 'colors'
 
   nodemon
-    script: "#{__dirname}/server/server.coffee"
+    script: "#{__dirname}/server/src/server.coffee"
     ext: 'coffee'
     execMap:
       'coffee': 'coffee --nodejs --harmony'

@@ -12,7 +12,7 @@ require('./routes') router
 app = koa()
 app.keys = [process.env.FOOSNET_WEB_SESSION_KEY ? 'f00sYoMamA']
 app
-  .use require('koa-static')("#{__dirname}/../client/dist/")
+  .use require('koa-static')("#{__dirname}/../../client/dist/")
   .use logger
     name: 'foosnet.io'
     level: process.env.LOG_LEVEL || 'debug'
@@ -28,7 +28,7 @@ app
   .use logger.timeContext()
   .use logger.requestLogger()
   .use require('koa-bodyparser')()
-  .use require('koa-render')("#{__dirname}/views", 'jade')
+  .use require('koa-render')("#{__dirname}/../views", 'jade')
   .use require('koa-generic-session')()
   .use passport.initialize()
   .use passport.session()
