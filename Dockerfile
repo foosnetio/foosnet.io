@@ -9,7 +9,7 @@ COPY client/vendor /src/client/vendor
 COPY server/src /src/server/src
 COPY server/views /src/server/views
 
-ENV PORT 3001
+ENV PORT 8080
 EXPOSE $PORT
 
 # Build
