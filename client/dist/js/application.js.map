@@ -1,0 +1,1 @@
+{"version":3,"sources":["application.coffee"],"names":[],"mappings":"AAAA;EAAA,OAAO,CAAC,MAAR,CAAe,aAAf,EAA8B,CAAC,YAAD,EAAe,WAAf,CAA9B;AAAA","file":"application.js","sourceRoot":"/source/","sourcesContent":["angular.module 'application', ['ngResource', 'ui.router']\n"]}
