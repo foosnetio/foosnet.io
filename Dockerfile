@@ -14,6 +14,9 @@ EXPOSE $PORT
 
 # Build
 WORKDIR /src/
+RUN npm install --unsafe-perm
+RUN gulp
+RUN rm -rf node_modules
 RUN npm install --production --unsafe-perm
 
 CMD ["npm", "run", "production"]

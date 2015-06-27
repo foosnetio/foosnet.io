@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "description": "Foosball ladder",
   "scripts": {
-    "postinstall": "./node_modules/.bin/gulp",
     "production": "NODE_ENV=production coffee --nodejs --harmony server/src/server.coffee",
     "start": "node --harmony ./node_modules/.bin/gulp start",
     "test": "node --harmony ./node_modules/.bin/gulp test",
