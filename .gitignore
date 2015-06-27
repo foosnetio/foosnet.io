@@ -1,3 +1,4 @@
 node_modules
 *.log
-*.sublime-workspace
+foosnet.io.sublime-workspace
+client/dist
