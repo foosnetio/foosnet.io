@@ -3,9 +3,8 @@ gutil = require 'gulp-util'
 
 gulp.task 'default', ['less', 'jade', 'coffee', 'copy']
 
-gulp.task 'clean', ->
-  gulp.src 'client/dist', read: false
-    .pipe require('gulp-clean')()
+gulp.task 'clean', (cb) ->
+  require('del') ['client/dist'], cb
 
 gulp.task 'copy', ->
   gulp.src 'client/vendor/**/*'
