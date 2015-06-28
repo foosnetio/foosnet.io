@@ -1,4 +1,5 @@
 {NotifyRequest} = require '../models'
+feature = require '../feature-toggles'
 Q = require 'q'
 
 module.exports = (router) ->
@@ -6,8 +7,10 @@ module.exports = (router) ->
   router.get '/', (next) ->
     if @passport.user
       @body = yield @render 'application/index'
-    else
+    else if feature.isEnabled 'launch'
       @body = yield @render 'marketing/index'
+    else
+      @body = yield @render 'marketing/splash'
 
   router.post '/notify', ->
     {name, email} = @request.body
