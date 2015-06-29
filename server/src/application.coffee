@@ -1,3 +1,5 @@
+process.env.NODE_ENV ?= 'development'
+
 koa = require 'koa'
 router = require('koa-router')()
 logger = require 'koa-bunyan-logger'
@@ -9,6 +11,22 @@ require('./models').connect()
 require('./passport').initialize()
 require('./routes') router
 
+loggerStreams = [
+  level: 'info'
+  stream: bunyanLogentries.createStream token: process.env.FOOSNET_LOGENTRIES_TOKEN
+  type: 'raw'
+]
+
+if process.env.NODE_ENV is 'development'
+  PrettyStream = require 'bunyan-prettystream'
+  prettyStdOut = new PrettyStream()
+  prettyStdOut.pipe process.stdout
+
+  loggerStreams.push
+    level: 'debug'
+    type: 'raw'
+    stream: prettyStdOut
+
 app = koa()
 app.keys = [process.env.FOOSNET_WEB_SESSION_KEY ? 'f00sYoMamA']
 app
@@ -16,14 +34,7 @@ app
   .use logger
     name: 'foosnet.io'
     level: process.env.LOG_LEVEL || 'debug'
-    streams: [
-      level: 'info'
-      stream: bunyanLogentries.createStream token: process.env.FOOSNET_LOGENTRIES_TOKEN
-      type: 'raw'
-    ,
-      level: 'info',
-      stream: process.stdout
-    ]
+    streams: loggerStreams
   .use logger.requestIdContext()
   .use logger.timeContext()
   .use logger.requestLogger()
