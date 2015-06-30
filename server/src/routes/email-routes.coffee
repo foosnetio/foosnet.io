@@ -5,13 +5,13 @@ Q = require 'q'
 module.exports = (router) ->
 
   router.post '/contact/mail', (next) ->
-    {name, phone, email, message} = @request.body
+    {email, location, message, name} = @request.body
 
     yield Q.ninvoke sendgrid, 'send',
       to:       'jacob@foosnet.io'
       from:     'donotreply@foosnet.io'
       subject:  'Marketting "contact us" message'
-      text:     "name: #{name}\nemail: #{email}\nmessage:\n#{message}"
+      text:     "name: #{name}\nemail: #{email}\nlocation: #{location}\nmessage:\n#{message}"
     .then (res) =>
       @status = 204
     .catch (err) =>

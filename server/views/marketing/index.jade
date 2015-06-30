@@ -53,19 +53,19 @@ html(lang='en')
         .row
           .col-lg-12.text-center
             h2.section-heading Features
-            h3.section-subheading.text-muted It's more fun when ladder points are on the line.
+            h3.section-subheading.text-muted Foosball is more fun when ladder points are on the line.
         .row.text-center
           .col-md-4
             span.fa-stack.fa-4x
               i.fa.fa-circle.fa-stack-2x.text-primary
-              i.fa.fa-shopping-cart.fa-stack-1x.fa-inverse
+              i.fa.fa-users.fa-stack-1x.fa-inverse
             h4.service-heading Leagues
             p.text-muted
               | Join with the people you play with most, prove who truely has the strongest game. Don't just play ... compete for the next rung up the ladder.
           .col-md-4
             span.fa-stack.fa-4x
               i.fa.fa-circle.fa-stack-2x.text-primary
-              i.fa.fa-laptop.fa-stack-1x.fa-inverse
+              i.fa.fa-soccer-ball-o.fa-stack-1x.fa-inverse
             h4.service-heading Seasons
               .small (coming soon)
             p.text-muted
@@ -73,7 +73,7 @@ html(lang='en')
           .col-md-4
             span.fa-stack.fa-4x
               i.fa.fa-circle.fa-stack-2x.text-primary
-              i.fa.fa-lock.fa-stack-1x.fa-inverse
+              i.fa.fa-shield.fa-stack-1x.fa-inverse
             h4.service-heading Tournaments
               .small (coming soon)
             p.text-muted
@@ -84,7 +84,7 @@ html(lang='en')
         .row
           .col-lg-12.text-center
             h2.section-heading How it works
-            h3.section-subheading.text-muted It's simple, but challenging. Hone your skills and climb the ranks.
+            h3.section-subheading.text-muted It's simple, but not easy. Hone your skills and climb the ranks.
         .row
           .col-lg-12
             ul.timeline
@@ -145,7 +145,7 @@ html(lang='en')
                     input#email.form-control(type='email', placeholder='Your Email *', required='', data-validation-required-message='Please enter your email address.')
                     p.help-block.text-danger
                   .form-group
-                    input#phone.form-control(type='tel', placeholder='Your Phone *', required='', data-validation-required-message='Please enter your phone number.')
+                    input#location.form-control(type='tel', placeholder='Your Location *', required='', data-validation-required-message='Please enter your location.')
                     p.help-block.text-danger
                 .col-md-6
                   .form-group
@@ -163,20 +163,17 @@ html(lang='en')
           .col-md-4
             ul.list-inline.social-buttons
               li
-                a(href='#')
+                a(href='https://twitter.com/foosnetio', target="_blank")
                   i.fa.fa-twitter
               li
-                a(href='#')
-                  i.fa.fa-facebook
-              li
-                a(href='#')
-                  i.fa.fa-linkedin
-          .col-md-4
-            ul.list-inline.quicklinks
-              li
-                a(href='#') Privacy Policy
-              li
-                a(href='#') Terms of Use
+                a.github(href='https://github.com/burtonjc/foosnet.io', target="_blank")
+                  i.fa.fa-github-alt
+          //- .col-md-4
+          //-   ul.list-inline.quicklinks
+          //-     li
+          //-       a(href='#') Privacy Policy
+          //-     li
+          //-       a(href='#') Terms of Use
 
     script(src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js")
     script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js")
