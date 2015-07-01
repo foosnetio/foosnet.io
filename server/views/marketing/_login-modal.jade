@@ -1,0 +1,38 @@
+.login-modal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='loginModalLabel')
+  .modal-dialog(role='document')
+    .modal-content
+      .modal-header
+        button.close(type='button', data-dismiss='modal', aria-label='Close')
+          span(aria-hidden='true') ×
+        h4#loginModalLabel.modal-title Login to foosnet.io
+      .modal-body
+        .row
+          .col-sm-6.oauth-login-ct
+            .row
+              .col-xs-12
+                form(method="post", action="/auth/google")
+                  .form-group
+                    button.btn.btn-danger.form-control.oauth-button(type="submit")
+                      i.fa.fa-google
+                      span Login with Google
+            .row
+              .col-xs-12
+                form(method="post", action="/auth/facebook")
+                  .form-group
+                    button.btn.btn-primary.form-control.oauth-button(type="submit")
+                      i.fa.fa-facebook
+                      span Login with Facebook
+            .row
+              .col-xs-12
+                form(method="post", action="/auth/github")
+                  .form-group
+                    button.btn.btn-default.form-control.oauth-button(type="submit")
+                      i.fa.fa-github
+                      span Login with GitHub
+
+          .col-sm-6
+            .panel.panel-default
+              .panel-heading
+                | Logging in with social accounts
+              .panel-body
+                p Logging in with your existing social accounts means you don't have to remember a new username and password just for foosnet.io!

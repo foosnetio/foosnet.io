@@ -1,22 +1,7 @@
 doctype html
 html(lang='en')
   head
-    meta(charset='utf-8')
-    meta(http-equiv='X-UA-Compatible', content='IE=edge')
-    meta(name='viewport', content='width=device-width, initial-scale=1')
-    meta(name='description', content='')
-    meta(name='author', content='Jacob Burton')
-    title foosnet.io
-
-    link(rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css")
-    link(rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css")
-    link(href='/vendor/startbootstrap-agency-1.0.4/css/agency.css', rel='stylesheet')
-    link(rel="stylesheet" href="/css/marketing.css")
-
-    link(href='//fonts.googleapis.com/css?family=Montserrat:400,700', rel='stylesheet', type='text/css')
-    link(href='//fonts.googleapis.com/css?family=Kaushan+Script', rel='stylesheet', type='text/css')
-    link(href='//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic', rel='stylesheet', type='text/css')
-    link(href='//fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700', rel='stylesheet', type='text/css')
+    include _head
 
   body#page-top.index
 
@@ -41,7 +26,7 @@ html(lang='en')
             li
               a.page-scroll(href='#contact') Contact
             li
-              a.login-button Sign in
+              a.login-button(href="#login", data-toggle="modal", data-target=".login-modal") Sign in
 
     header
       .container
@@ -52,7 +37,7 @@ html(lang='en')
             a.page-scroll.btn.btn-xl.col-md-3.col-md-offset-2(href='#features') Tell Me More
             p.col-md-2.or
               | or
-            a.page-scroll.btn.btn-xl.col-md-3.get-started-btn(href='#features') Get started
+            button.page-scroll.btn.btn-xl.col-md-3.get-started-btn(data-toggle="modal", data-target=".login-modal") Get started
               i.fa.fa-angle-double-right
 
     section#features
@@ -182,6 +167,8 @@ html(lang='en')
           //-     li
           //-       a(href='#') Terms of Use
 
+    include _login-modal
+
     script(src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js")
     script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js")
     script(src='//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js')
@@ -192,3 +179,10 @@ html(lang='en')
     script(src='/vendor/startbootstrap-agency-1.0.4/js/contact_me.js')
 
     script(src='/vendor/startbootstrap-agency-1.0.4/js/agency.js')
+
+    script.
+      $(function() {
+        if (window.location.hash === '#login') {
+          $('.login-modal').modal('show');
+        }
+      });
