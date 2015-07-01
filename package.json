@@ -32,6 +32,7 @@
     "koa": "^0.19.1",
     "koa-bodyparser": "^1.5.0",
     "koa-bunyan-logger": "^1.2.0",
+    "koa-favicon": "^1.2.0",
     "koa-generic-session": "^1.8.0",
     "koa-passport": "^1.1.6",
     "koa-render": "^0.2.1",

@@ -30,6 +30,7 @@ if process.env.NODE_ENV is 'development'
 app = koa()
 app.keys = [process.env.FOOSNET_WEB_SESSION_KEY ? 'f00sYoMamA']
 app
+  .use require('koa-favicon')("#{__dirname}/../../client/dist/resources/images/favicon.ico")
   .use require('koa-static')("#{__dirname}/../../client/dist/")
   .use require('koa-static')("#{__dirname}/../../client/dist/")
   .use logger
