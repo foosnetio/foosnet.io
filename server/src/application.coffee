@@ -31,6 +31,7 @@ app = koa()
 app.keys = [process.env.FOOSNET_WEB_SESSION_KEY ? 'f00sYoMamA']
 app
   .use require('koa-static')("#{__dirname}/../../client/dist/")
+  .use require('koa-static')("#{__dirname}/../../client/dist/")
   .use logger
     name: 'foosnet.io'
     level: process.env.LOG_LEVEL || 'debug'

@@ -9,6 +9,8 @@ gulp.task 'clean', (cb) ->
 gulp.task 'copy', ->
   gulp.src 'client/vendor/**/*'
     .pipe gulp.dest 'client/dist/vendor'
+  gulp.src 'client/resources/**/*'
+    .pipe gulp.dest 'client/dist/resources'
 
 gulp.task 'coffee', ->
   sourcemaps = require 'gulp-sourcemaps'

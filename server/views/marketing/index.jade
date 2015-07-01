@@ -40,13 +40,20 @@ html(lang='en')
               a.page-scroll(href='#how-it-works') How it works
             li
               a.page-scroll(href='#contact') Contact
+            li
+              a.login-button Sign in
 
     header
       .container
         .intro-text
           .intro-lead-in Welcome to foosnet.io
           .intro-heading Don't just play ... compete!
-          a.page-scroll.btn.btn-xl(href='#features') Tell Me More
+          .row-fluid.action-buttons-ct
+            a.page-scroll.btn.btn-xl.col-md-3.col-md-offset-2(href='#features') Tell Me More
+            p.col-md-2.or
+              | or
+            a.page-scroll.btn.btn-xl.col-md-3.get-started-btn(href='#features') Get started
+              i.fa.fa-angle-double-right
 
     section#features
       .container
@@ -65,9 +72,9 @@ html(lang='en')
           .col-md-4
             span.fa-stack.fa-4x
               i.fa.fa-circle.fa-stack-2x.text-primary
-              i.fa.fa-soccer-ball-o.fa-stack-1x.fa-inverse
+              i.fa.fa-futbol-o.fa-stack-1x.fa-inverse
             h4.service-heading Seasons
-              .small (coming soon)
+              span.badge coming soon
             p.text-muted
               | Don't get stuck playing with the same four people over and over, let foosnet.io schedule your season. See who comes out on top.
           .col-md-4
@@ -75,9 +82,9 @@ html(lang='en')
               i.fa.fa-circle.fa-stack-2x.text-primary
               i.fa.fa-shield.fa-stack-1x.fa-inverse
             h4.service-heading Tournaments
-              .small (coming soon)
+              span.badge coming soon
             p.text-muted
-              | For those days where you have to settle the score now, enlist your challengers and let foosnet.io manage the brackets. Best of luck.
+              | For those days when you have to settle the score, enlist your challengers and let foosnet.io manage the brackets. Best of luck.
 
     section#how-it-works
       .container
@@ -97,7 +104,7 @@ html(lang='en')
                     h4.subheading Become a player
                   .timeline-body
                     p.text-muted
-                      | Tell the world you are a fooser. Become a player and start building your name. Each game you play will alter your rating. It's the Elo system where winning games increases your rating, losing games loses you points.
+                      | Tell the world you are a fooser. Become a player and start building your name. Each game you play will effect your rating. It's the Elo system; the harder the matchup, the more points you win.
               li.timeline-inverted
                 .timeline-image
                   span.number 2
@@ -107,7 +114,7 @@ html(lang='en')
                     h4.subheading Join a league
                   .timeline-body
                     p.text-muted
-                      | Competing against yourself has it's limits. Join a league with the people you play with most. Challenge for the top of the ladder. Play in singles or in pairs. Don't have a league? Start your own!
+                      | Competing against yourself has its limits. Join a league with the people you play with most. Work your way to the top of the ladder. Play in singles or in pairs. Don't have a league? Start your own!
               li
                 .timeline-image
                   span.number 3
@@ -117,7 +124,7 @@ html(lang='en')
                     h4.subheading Make it a tournament
                   .timeline-body
                     p.text-muted
-                      | Tensions running high in your league and some scores need to be settled now? Enter the proving grounds and duke it out in double or single elimination tournaments. Leave the brackets to us.
+                      | Tensions running high in your league with some scores needing to be settled? Enter the proving grounds and duke it out in double or single elimination tournaments. Leave the brackets to us.
               li.timeline-inverted
                 .timeline-image
                   h4
