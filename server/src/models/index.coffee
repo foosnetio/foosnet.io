@@ -1,6 +1,6 @@
 connect = ->
   mongoose = require 'mongoose'
-  connectUri = process.env.FOOSNET_MONGO_URI ? 'mongodb://localhost/test'
+  connectUri = process.env.FOOSNETIO_MONGO_URI ? 'mongodb://localhost/test'
 
   mongoose.connect connectUri
 

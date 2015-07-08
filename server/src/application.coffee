@@ -13,7 +13,7 @@ require('./routes') router
 
 loggerStreams = [
   level: 'info'
-  stream: bunyanLogentries.createStream token: process.env.FOOSNET_LOGENTRIES_TOKEN
+  stream: bunyanLogentries.createStream token: process.env.FOOSNETIO_LOGENTRIES_TOKEN
   type: 'raw'
 ]
 
@@ -28,7 +28,7 @@ if process.env.NODE_ENV is 'development'
     stream: prettyStdOut
 
 app = koa()
-app.keys = [process.env.FOOSNET_WEB_SESSION_KEY ? 'f00sYoMamA']
+app.keys = [process.env.FOOSNETIO_SESSION_SECRET ? 'f00sYoMamA']
 app
   .use require('koa-favicon')("#{__dirname}/../../client/dist/resources/images/favicon.ico")
   .use require('koa-static')("#{__dirname}/../../client/dist/")
