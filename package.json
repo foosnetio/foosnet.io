@@ -38,11 +38,13 @@
     "koa-render": "^0.2.1",
     "koa-router": "^4.3.2",
     "koa-static": "^1.4.9",
+    "lodash": "^3.10.0",
     "mongoose": "^4.0.6",
     "passport-facebook": "^2.0.0",
     "passport-github": "^0.1.5",
     "passport-google-oauth": "^0.2.0",
     "q": "^1.4.1",
+    "request": "^2.58.0",
     "sendgrid": "^1.8.0",
     "string": "^3.3.0"
   },

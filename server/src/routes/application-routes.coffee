@@ -12,6 +12,12 @@ module.exports = (router) ->
     else
       @body = yield @render 'marketing/splash'
 
+  router.get '/login', (next) ->
+    if @passport.user
+      @body = yield @render 'application/index'
+    else
+      @body = yield @render 'marketing/login'
+
   router.post '/notify', ->
     {name, email} = @request.body
 

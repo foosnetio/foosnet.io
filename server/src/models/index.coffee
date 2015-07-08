@@ -14,3 +14,4 @@ connect = ->
 module.exports =
   connect: connect
   NotifyRequest: require './notify-request'
+  User: require './user'
