@@ -32,7 +32,6 @@ app.keys = [process.env.FOOSNETIO_SESSION_SECRET ? 'f00sYoMamA']
 app
   .use require('koa-favicon')("#{__dirname}/../../client/dist/resources/images/favicon.ico")
   .use require('koa-static')("#{__dirname}/../../client/dist/")
-  .use require('koa-static')("#{__dirname}/../../client/dist/")
   .use logger
     name: 'foosnet.io'
     level: process.env.LOG_LEVEL || 'debug'
