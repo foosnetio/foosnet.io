@@ -16,6 +16,10 @@ angular.module('application').config([
     .state 'home',
       url: '/'
       templateUrl: '/partials/home.html'
+    .state 'leagues',
+      url: '/leagues'
+      templateUrl: '/partials/leagues.html'
+
 ]).run [
   '$window'
 

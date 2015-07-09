@@ -17,7 +17,9 @@ html(ng-app="application")
   body(ng-cloak)
     ng-include(src="'/partials/navigation.html'")
 
-    .container.page(ui-view)
+    foosnet-sidebar
+
+    .page(ui-view)
 
     script(src="/vendor/jquery/dist/jquery.min.js")
     script(src="/vendor/bootstrap/dist/js/bootstrap.min.js")
@@ -27,4 +29,5 @@ html(ng-app="application")
     script(src="/vendor/string/dist/string.min.js")
 
     script(src="/js/application.js")
+    script(src="/js/sidebar/sidebar.js")
     script(src="/js/routes.js")
