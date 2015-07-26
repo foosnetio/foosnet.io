@@ -7,10 +7,10 @@ Q = require 'q'
 module.exports =
   initialize: ->
     passport.serializeUser (user, done) ->
-      done null, user
+      done null, user.id
 
-    passport.deserializeUser (user, done) ->
-      done null, user
+    passport.deserializeUser (userId, done) ->
+      User.findById userId, done
 
     if process.env.NODE_ENV is 'production'
       baseUri = 'https://foosnet.io'
@@ -30,7 +30,7 @@ module.exports =
             user.emails.addToSet email
 
           Q.ninvoke user, 'save'
-        .then (user) ->
+        .spread (user) ->
           done null, user
         .catch done
         .done()
