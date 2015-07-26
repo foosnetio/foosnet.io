@@ -16,6 +16,7 @@ EXPOSE $PORT
 # Build
 WORKDIR /src/
 RUN npm install --unsafe-perm
+RUN ./node_modules/.bin/bower --allow-root install
 RUN ./node_modules/.bin/gulp
 RUN rm -rf node_modules
 RUN npm install --production --unsafe-perm
