@@ -1,7 +1,7 @@
 FROM node:0.12.5
 
 # Add source
-ADD gulpfile.coffee package.json /src/
+ADD gulpfile.coffee package.json bower.json /src/
 COPY client/partials /src/client/partials
 COPY client/resources /src/client/resources
 COPY client/src /src/client/src
