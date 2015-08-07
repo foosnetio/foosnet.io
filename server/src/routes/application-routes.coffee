@@ -4,17 +4,25 @@ Q = require 'q'
 
 module.exports = (router) ->
 
-  router.get '/', (next) ->
+  renderApp = ->
     if @passport.user
-      @body = yield @render 'application/index'
+      @body = yield @render 'application/index',
+        session:
+          user: @passport.user
     else if feature.isEnabled 'launch'
       @body = yield @render 'marketing/index'
     else
       @body = yield @render 'marketing/splash'
 
+  router.get '/', renderApp
+  router.get '/leagues', renderApp
+  router.get '/leaderboard', renderApp
+
   router.get '/login', (next) ->
     if @passport.user
-      @body = yield @render 'application/index'
+      @body = yield @render 'application/index',
+        session:
+          user: @passport.user
     else
       @body = yield @render 'marketing/login'
 

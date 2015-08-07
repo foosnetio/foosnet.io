@@ -1,3 +1,24 @@
-.page-title
+.page-header(ng-if="userLeagues.$resolved && userLeagues.length")
   h1 Leagues
-  p.lead Here is where you play
+
+.row
+  .col-sm-4(ng-repeat="league in leagues")
+    .panel.panel-default
+      .panel-heading {{league.name}}
+      .panel-body {{league.location}}
+      .panel-footer
+
+.page-header(ng-if="leagues.$resolved")
+  h1 Join a League
+  p.text-muted
+    | Pick a league to join. Not seeing one that works for you?
+    button.btn.btn-link(ng-click="$parent.createLeagueForm = true") Start your own!
+
+form#createLeagueForm(ng-if="createLeagueForm")
+  .form-group
+    label(for="leagueNameInput") League Name
+    input#leagueNameInput.form-control(type="text" placeholder="League Name" ng-model="league.name")
+  .form-group
+    label(for="leagueLocationInput") Location
+    input#leagueLocationInput.form-control(type="text" placeholder="City, State" ng-model="league.location")
+  button.btn.btn-primary(ng-click="createLeague(league)") Create league

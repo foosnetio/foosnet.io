@@ -7,5 +7,18 @@ nav.navbar.navbar-default.hidden-xs(role='navigation')
       span.icon-bar
     a.navbar-brand(ui-sref="home") foosnet.io
 
-  form.navbar-form.navbar-right.hidden-xs(action="/logout", method="post")
-    button.btn.btn-link.logout-button(type="submit") Logout
+  .collapse.navbar-collapse
+    ul.nav.navbar-nav(ng-if="userLeagues")
+      li.dropdown
+        a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+          | {{league.name}}
+          span.caret
+        ul.dropdown-menu
+          li(ng-repeat="userLeague in userLeagues")
+            a(ui-sref="league({leagueId: userLeague.id})") {{userLeague.name}}
+          li.divider(role='separator')
+          li
+            a(ui-sref="leagues") Join or create a league
+
+    form.navbar-form.navbar-right.hidden-xs(action="/logout", method="post")
+      button.btn.btn-link.logout-button(type="submit") Logout

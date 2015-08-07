@@ -13,12 +13,25 @@ angular.module('application').config([
     $urlRouterProvider.otherwise '/'
 
     $stateProvider
-    .state 'home',
+    .state 'home'
       url: '/'
       templateUrl: '/partials/home.html'
+      controller: 'pages.controllers.home'
+
+    .state 'league',
+      url: '/league/:leagueId'
+      templateUrl: '/partials/home.html'
+      controller: 'pages.controllers.home'
+
+    .state 'league.leaderboard',
+      url: '/league/:leagueId/leaderboard'
+      templateUrl: '/partials/leaderboard.html'
+      controller: 'pages.controllers.leaderboard'
+
     .state 'leagues',
       url: '/leagues'
       templateUrl: '/partials/leagues.html'
+      controller: 'pages.controllers.leagues'
 
 ]).run [
   '$window'

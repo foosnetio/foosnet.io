@@ -15,9 +15,9 @@ nav.navbar.navbar-default.sidebar(role='navigation')
             | Home
             span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-home(style='font-size:16px;')
         li(ui-sref-active="active")
-          a(ui-sref="leagues")
-            | Leagues
-            i.pull-right.hidden-xs.showopacity.fa.fa-users(style='font-size:16px;')
+          a(ui-sref="league.leaderboard({leagueId: league.id})")
+            | Leaderboard
+            i.pull-right.hidden-xs.showopacity.fa.fa-tasks(style='font-size:16px;')
         //- li
         //-   a(href='#')
         //-     | Tags

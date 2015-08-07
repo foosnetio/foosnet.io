@@ -14,7 +14,13 @@ html(ng-app="application")
 
     link(rel="stylesheet" href="/css/application.css")
 
-  body(ng-cloak)
+    script.
+      var Application = {
+        session: !{JSON.stringify(session)}
+      };
+      Object.freeze(Application);
+
+  body(ng-cloak ng-controller="ApplicationController")
     ng-include(src="'/partials/navigation.html'")
 
     foosnet-sidebar
@@ -29,5 +35,11 @@ html(ng-app="application")
     script(src="/vendor/string/dist/string.min.js")
 
     script(src="/js/application.js")
+    script(src="/js/controllers/application.js")
+    script(src="/js/pages/controllers/home.js")
+    script(src="/js/pages/controllers/leaderboard.js")
+    script(src="/js/pages/controllers/leagues.js")
+    script(src="/js/services/application.js")
+    script(src="/js/services/resources/league.js")
     script(src="/js/sidebar/sidebar.js")
     script(src="/js/routes.js")

@@ -30,8 +30,8 @@ module.exports =
             user.emails.addToSet email
 
           Q.ninvoke user, 'save'
-        .spread (user) ->
-          done null, user
+          .spread (user) ->
+            done null, user
         .catch done
         .done()
 

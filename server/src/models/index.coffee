@@ -13,5 +13,6 @@ connect = ->
 
 module.exports =
   connect: connect
+  League: require './league'
   NotifyRequest: require './notify-request'
   User: require './user'

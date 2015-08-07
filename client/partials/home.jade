@@ -1,3 +1,10 @@
-.page-title
+.page-header
   h1 Welcome to foosnet.io
-  p.lead lets get started
+    small  lets get started
+
+.panel.panel-default(ng-if="leagues.$resolved && leagues.length === 0")
+  .panel-heading
+    | Join a League
+  .panel-body
+    p First things first, lets get you in a league so you can start recording games.
+    a.btn.btn-success(ui-sref='leagues') Join a league
