@@ -1,0 +1,60 @@
+doctype html
+html(lang='en')
+  head
+    include _head
+  
+  body.create-page
+    .container
+      .page-header
+        a.brand(href="/") foosnet.io
+      
+      .row-fluid.league-name-form-ct
+        .col-md-6.col-md-offset-3
+          h1 Create a league
+          form.league-name-form
+            .form-group
+              p.help-block
+                strong Is this a company league?
+                |  You might want to name your league after your company. If your company has multiple locations, you might want to include reagions in your League name.
+              label(for="leagueNameInput") League name
+              input#leagueNameInput.form-control(placeholder="Ex. Foosnet or Foosnet Boulder")
+            
+            button.btn.btn-lg.btn-success(type="submit")
+              | Next
+              i.fa.fa-arrow-right
+      
+      .row-fluid.league-url-form-ct
+        .col-md-6.col-md-offset-3
+          h1 Get a URL
+          form.league-name-form
+            .form-group
+              p.help-block
+                | This is the address you and your competitors will use to compete in Foosnet.
+              label(for="leagueURLInput") League URL
+                small.muted  (Letters, numbers, and dashes only)
+              input#leagueURLInput.form-control(placeholder="Ex. Foosnet or Foosnet Boulder")
+            
+            button.btn.btn-lg.btn-success(type="submit")
+              | Next
+              i.fa.fa-arrow-right
+    
+    script(src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js")
+    script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js")
+    script.
+      $(document).ready(function() {
+        $('.league-name-form').on('submit', function(e) {
+          var leagueName = $('#leagueNameInput').val();
+          
+          if (leagueName) {
+            $.post('/suggestUrl', {
+              name: leagueName
+            }).done(function(body, status, response) {
+              console.log('done:', body);
+            //- }).fail(function() {
+            //-   console.log('fail:', arguments);
+            });
+          }
+          
+          return false;
+        });
+      });

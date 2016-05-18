@@ -12,6 +12,16 @@ module.exports = (router) ->
     else
       @body = yield @render 'marketing/splash'
 
+  router.get '/create', (next) ->
+    @body = yield @render 'marketing/create'
+
+  router.post '/suggestUrl', (next) ->
+    console.log 'here', @request.body
+    @body =
+      available: [@request.body.name]
+      unavailable: []
+    yield next
+
   router.get '/login', (next) ->
     if @passport.user
       @body = yield @render 'application/index'
